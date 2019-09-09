@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数学建模方法总结</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+<li>
+<ul>
+<li></li>
+<li></li>
+</ul>
+</li>
+<li>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</li>
+<li></li>
+<li></li>
+<li>
+<ul>
+<li></li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <p></p><div class="toc"><h3>数学建模方法总结</h3><ul><li><a href="#_1">数据分析法</a></li><ul><li><a href="#_3">方差分析</a></li><li><a href="#_10">回归分析</a></li></ul><li><a href="#_20">机理分析法</a></li><ul><li><a href="#_22">微分方程建模</a></li><li><a href="#_32">稳定状态模型</a></li><li><a href="#_43">差分方程模型</a></li><ul><li><a href="#_44">蛛网模型</a></li><li><a href="#_47">遗传模型</a></li></ul></ul><li><a href="#_52">马氏链模型</a></li><li><a href="#_58">动态优化模型</a></li><li><a href="#_63">作业计划</a></li><ul><li><a href="#_64">流水作业排序问题</a></li><li><a href="#JSP_72">作业车间调度问题（JSP）</a></li></ul></ul></div><p></p>
+<h1><a id="_1"></a>数据分析法</h1>
+<p>——从大量的观测数据利用统计方法建立数学模型</p>
+<h2><a id="_3"></a>方差分析</h2>
+<p>为了使生产过程稳定，达到优质、高产，需要<mark>对影响产品质量的因素进行分析</mark>，找出有显著影响的那些因素，除了从机理方面进行研究外，常常要做许多试验，对结果作分析、比较，寻求规律。</p>
+<p>例如，从用几种不同工艺制成的灯泡中，各抽取了若干测量其寿命，要推断这几种工艺制成的灯泡寿命是否有显著差异；（<strong>判断不同工艺对灯泡寿命的影响程度</strong>）【单因素方差分析】</p>
+<p>再如，用几种化肥和几个小麦品种在若干试验田里种植小麦，要<strong>推断不同的化肥和品种对产量有无显著差异</strong>【双因素方差分析】</p>
+<h2><a id="_10"></a>回归分析</h2>
+<p>简单地说，回归分析是<mark>对拟合问题做的一种统计分析</mark>。<br>
+P.S. 曲线拟合问题的特点是，根据得到的若干有关变量的一组数据，寻找因变量与（一个或几个）自变量之间一个函数，使这个函数对那组数据拟合得最好。通常。<strong>函数的形式可以由经验、先验知识或对数据的直接观察</strong>决定，要做的工作是由数据用最小二乘法<strong>计算函数中的待定系数</strong>。</p>
+<p>具体地说，回归分析<strong>在一组数据的基础上研究以下问题</strong>：</p>
+<ol>
+<li>建立因变量<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.625em; vertical-align: -0.19444em;"></span><span class="mord mathit" style="margin-right: 0.03588em;">y</span></span></span></span></span>与自变量<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">x_1,x_2,...,x_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.625em; vertical-align: -0.19444em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.151392em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span>之间的回归模型（经验公式）；</li>
+<li>对回归模型的可信度进行检验；</li>
+<li>判断每个自变量<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>(</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x_i(i=1,2,...,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.311664em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathit">i</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span></span>对<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.625em; vertical-align: -0.19444em;"></span><span class="mord mathit" style="margin-right: 0.03588em;">y</span></span></span></span></span>的影响是否显著；</li>
+<li>诊断回归模型是否适合这组数据；</li>
+<li>利用回归模型对<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.625em; vertical-align: -0.19444em;"></span><span class="mord mathit" style="margin-right: 0.03588em;">y</span></span></span></span></span>进行预报或控制。</li>
+</ol>
+<h1><a id="_20"></a>机理分析法</h1>
+<p>——从基本物理定律以及系统的结构数据来推导出模型</p>
+<h2><a id="_22"></a>微分方程建模</h2>
+<p>——分析动态过程，<mark>动态变化规律</mark></p>
+<ul>
+<li>常微分方程——解决<strong>两个变量之间的变化规律</strong>，关键是建立“瞬时变化率”的表达式</li>
+<li>偏微分方程——解决<strong>因变量与两个以上自变量之间的变化规律</strong></li>
+</ul>
+<p>经典模型有：</p>
+<ol>
+<li>发射卫星为什么用三级火箭（牛顿力学定律，主要通过物理学的规律分析解决）</li>
+<li>人口模型（Malthus模型——&gt;阻滞增长模型，又称Logistics模型，所做改进为：增长率r由常数变为一个与当前人口数有关的函数）</li>
+<li>战争模型（主要通过双方士兵人数的增减以及有效射击率来描述胜算）</li>
+<li>放射性废料的处理（美国原子能委员会以往通过将废料装入密封的圆桶沉入海底的方法处理，这一模型主要是利用物理学相关定律如浮力的计算公式等，来分析这种处理的方法的不合理性）</li>
+</ol>
+<h2><a id="_32"></a>稳定状态模型</h2>
+<p>——研究某种意义下稳定状态的特征，特别是<mark>当时间充分长以后动态过程的变化趋势</mark>。（譬如在什么情况下描述过程的变量会越来越接近某些确定的数值，在什么情况下又会越来越远离这些数值而导致过程不稳定）</p>
+<p>为了分析这种稳定与不稳定的规律常常不需要求解微分方程，而可以利用<strong>微分方程稳定性理论</strong>，直接研究平衡状态的稳定性就行了</p>
+<p>这一模型的一个经典应用场景是<strong>再生资源的管理和开发</strong>：<br>
+这类模型的建立一般先考虑在没有收获的情况下资源自然增长模型，然后再考虑收获策略对资源增长情况的影响，故而往往可建立以下四个模型：</p>
+<ul>
+<li>资源增长模型（可使用Logistic模型）</li>
+<li>资源开发模型（可使用Scheafer模型）</li>
+<li>经济效益模型</li>
+<li>种群的相互竞争模型</li>
+</ul>
+<h2><a id="_43"></a>差分方程模型</h2>
+<h3><a id="_44"></a>蛛网模型</h3>
+<p>在自由竞争的社会中，很多领域会出现循环波动的现象。在经济领域中，可以从自由集市上某种商品的价格变化看到如下现象：在某一时期，商品的上市量大于需求，引起价格下跌，生产者觉得该商品无利可图，转而经营其它商品；一段时间之后，随着产量的下降，带来的供不应求又会导致价格上升，又有很多生产商会进行该商品的生产；随之而来的，又会出现商品过剩，价格下降。在没有外界干扰的情况下，这种现象将会反复出现。<br>
+——上述现象便可用蛛网模型来描述</p>
+<h3><a id="_47"></a>遗传模型</h3>
+<ul>
+<li>常染色体遗传模型</li>
+<li>常染色体隐性病模型</li>
+<li>X-链遗传模型</li>
+</ul>
+<h1><a id="_52"></a>马氏链模型</h1>
+<p>现实世界中有很多这样的现象：<strong>某一系统在已知现在情况的条件下，系统未来时刻的情况只与现在有关，而与过去的历史无直接关系</strong>。比如，研究一个商店的累计销售额，如果现在时刻的累计销售额已知，则未来某一时刻的累计销售额与现在时刻以前的任一时刻累计销售额无关。<br>
+——描述这类随机现象的数学模型称为马氏模型</p>
+<p>应用马尔可夫链的计算方法进行马尔可夫分析，主要目的是<mark>根据某些变量现在的情况及其变动趋向，来预测它在未来某特定区间可能产生的变动，作为提供某种决策的依据</mark></p>
+<h1><a id="_58"></a>动态优化模型</h1>
+<p>归结起来说，就是<mark>求最优控制函数使某个泛函达到极值</mark>。<strong>当控制函数可以事先确定为某种特殊的函数形式时，问题又简化为求普通函数的极值</strong>。求解泛函极值问题的方法主要有</p>
+<ul>
+<li>变分法</li>
+<li>最优控制理论方法<br>
+例如，生产设备的最大经济效益、产品最佳价格调整问题</li>
+</ul>
+<h1><a id="_63"></a>作业计划</h1>
+<h2><a id="_64"></a>流水作业排序问题</h2>
+<p>流水作业排序问题的基本特征是<strong>每个工件的加工路线都一致</strong>（注意，是指工件的流向一致，并不要求每个工件必须经过加工路线上每台机器加工。如果某些工件不经某些机器加工，则设相应的加工时间为0）。</p>
+<p>在流水生产线上制造不同的零件，遇到的就是流水作业排序问题。<br>
+一般来说，对于流水作业排序问题，工件在不同机器上的加工顺序不尽一致。但这里要讨论的是一种特殊情况，即所有工件在各台机器上的加工顺序都相同的情况。这就是排列排序问题。</p>
+<p>对于一般情形，排列排序问题的最优解不一定是相应的流水作业排序问题的最优解，但一般是比较好的解；<br>
+对于仅有2台和3台机器的特殊情况，可以证明，排列排序问题下的最优解一定是相应流水作业排序问题的最优解。</p>
+<h2><a id="JSP_72"></a>作业车间调度问题（JSP）</h2>
+<p>机器调度问题来源于不同的领域，如柔性制造系统、生产计划、计算机设计、后勤及通信等，这些问题的共同特性是没有一个有效的算法能在多项式时间内求出其最优解。</p>
+<p>古典的作业车间调度问题是最著名的机器调度问题之一。<br>
+问题可以描述为：给定一个工件的几何和一个机器的集合，每个工件包括多道工序，每道工序需要在一台给定的机器上非间断地加工某一段时间；每台机器一次最多只能加工一道工序；调度就是把工序分配给机器某个时间段。<br>
+问题的目标是找到最小时间长度的调度。</p>
+<p>JSP是最困难的组合优化问题之一。由于其本身的难处理的特性，一些启发式算法成为有吸引力的备选方法。<br>
+多数传统的启发式算法用优先权规则。<br>
+所谓优先权规则是一个从未排序的工序特定子集中选用工序的规则。<br>
+近年来，概率的局域搜索方法的发展引起了人们用局域搜索方法求解作业车间调度的兴趣，如模拟退火（SA）、禁忌搜索（TS）、遗传算法（GA）</p>
+
+    </div>
+  </div>
+</body>
+
+</html>
